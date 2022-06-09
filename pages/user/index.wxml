@@ -1,0 +1,154 @@
+
+<view class="user_info_wrap">
+  <view wx:if="{{userinfo.avatarUrl}}" class="user_img_wrap">
+    <image class="user_bg" src="" ></image>
+    <view class="user_info">
+      <image class="user_icon" src="{{userinfo.avatarUrl}}"></image>
+      <view class="user_name">{{userinfo.nickName}}</view>
+    </view>
+  </view>
+  <view wx:else class="user_btn">
+    <button type="primary" plain  bindtap="getUserProfile" > 登录 </button>
+  </view>
+</view>
+<view class="user_content">
+  
+  <view class="user_main">
+    <!-- 历史足迹 -->
+    <view class="history_wrap">
+      <navigator>
+        <view class="his_num">￥0</view>
+        <view class="his_name">余额</view>
+      </navigator>
+      <navigator url="/pages/collect/index">
+        <view class="his_num">0</view>
+        <view class="his_name">优惠券</view>
+      </navigator>
+      <navigator>
+        <view class="his_num">0</view>
+        <view class="his_name">积分</view>
+      </navigator>
+      <navigator>
+        <view class="his_num">0</view>
+        <view class="his_name">消息通知</view>
+      </navigator>
+    </view>
+    <!-- 我的订单 -->
+    <view class="orders_wrap">
+      <view class="orders_title">我的订单</view>
+      <view class="order_content">
+        <navigator url="/pages/order/index?type=1">
+<image src="../../icons/待支付.png" class="dzf"></image>
+          <view class="order_name">待支付</view>
+        </navigator>
+        <navigator url="/pages/order/index?type=2">
+    <image src="../../icons/待发货.png" class="dfh"></image>
+          <view class="order_name">待发货</view>
+        </navigator>
+        <navigator url="/pages/order/index?type=3">
+          <image src="../../icons/待收货.png" class="dsh"></image>
+          <view class="order_name">待收货</view>
+        </navigator>
+        <navigator>
+          <image src="../../icons/已完成.png" class="tk"></image>
+          <view class="order_name">已完成</view>
+        </navigator>
+        <navigator>
+          <image src="../../icons/退款_售后.png" class="wc"></image>
+          <view class="order_name">退款/售后</view>
+        </navigator>
+      </view>
+    </view>
+    <!-- 收货地址管理 -->
+    <!-- <view class="address_wrap">
+      收货地址管理
+    </view> -->
+    <!-- 应用信息相关 -->
+    <view class="app_info_wrap">
+
+      <view class="app_info_item app_info_contact">
+        <image style="width: 60rpx;height: 60rpx;" src="../../icons/自提.png" class="zd"></image>
+        <view class="tx">自提扫码</view>
+       <image src="../../icons/右箭头.png" class="yq"></image>
+      </view>
+      <view class="app_info_item app_info_contact">
+        <image src="../../icons/会员中心.png" class="zd"></image>
+        <view class="tx">会员中心</view>
+        <image src="../../icons/右箭头.png" class="yq"></image>
+      </view>
+      <view class="app_info_item app_info_contact">
+        <image src="../../icons/分销中心.png" class="zd"></image>
+        <view class="tx">分销中心</view>
+        <image src="../../icons/右箭头.png" class="yq"></image>
+      </view>
+      <view class="app_info_item app_info_contact">
+        <image src="../../icons/领券中心_极光看图.png" class="zd"></image>
+        <view class="tx">领券中心</view>
+        <image src="../../icons/右箭头.png" class="yq"></image>
+      </view>
+      <view class="app_info_item app_info_contact">
+        <image src="../../icons/收货地址_极光看图.png" class="zd"></image>
+        <view class="tx">收货地址</view>
+        <image src="../../icons/右箭头.png" class="yq"></image>
+      </view>
+      <view class="app_info_item app_info_contact">
+        <navigator url="/pages/collect/index">
+        <image src="../../icons/收藏.png" class="zd"></image>
+        <!-- <view class="his_num">{{collectNums}}</view> -->
+        <view class="tx">我的收藏</view>
+        <image src="../../icons/右箭头.png" class="zdx"></image>
+      </navigator>
+      </view>
+      <view class="app_info_item app_info_contact">
+        <navigator url="/pages/collect/index">
+        <image src="../../icons/我的足迹.png" class="zd"></image>
+        <!-- <view class="his_num">{{collectNums}}</view> -->
+        <view class="tx">我的足迹</view>
+        <image src="../../icons/右箭头.png" class="zdx"></image>
+      </navigator>
+      </view>
+      <view class="app_info_item app_info_contact">
+        <navigator url="/pages/collect/index">
+        <image src="../../icons/修改密码.png" class="zd"></image>
+        <!-- <view class="his_num">{{collectNums}}</view> -->
+        <view class="tx">修改密码</view>
+        <image src="../../icons/右箭头.png" class="zdx"></image>
+      </navigator>
+      </view>
+      <view class="app_info_item app_info_contact">
+        <navigator url="/pages/collect/index">
+        <image src="../../icons/消息.png" class="zd"></image>
+        <!-- <view class="his_num">{{collectNums}}</view> -->
+        <view class="tx">消息盒子</view>
+        <image src="../../icons/右箭头.png" class="zdx"></image>
+      </navigator>
+      </view>
+      <view class="app_info_item app_info_contact">
+        <navigator url="/pages/collect/index">
+        <image src="../../icons/服务条款.png" class="zd"></image>
+        <!-- <view class="his_num">{{collectNums}}</view> -->
+        <view class="tx">服务条款</view>
+        <image src="../../icons/右箭头.png" class="zdx"></image>
+      </navigator>
+      </view>
+      <view class="app_info_item app_info_contact">
+        <navigator url="/pages/collect/index">
+        <image src="../../icons/隐私策略.png" class="zd"></image>
+        <!-- <view class="his_num">{{collectNums}}</view> -->
+        <view class="tx">隐私策略</view>
+        <image src="../../icons/右箭头.png" class="zdx"></image>
+      </navigator>
+      </view>
+      <view class="app_info_item app_info_contact">
+        <navigator url="/pages/collect/index">
+        <image src="../../icons/切换.png" class="zd"></image>
+        <!-- <view class="his_num">{{collectNums}}</view> -->
+        <view class="tx">Switch to English</view>
+        <image src="../../icons/右箭头.png" class="zdx"></image>
+      </navigator>
+      </view>
+    </view>
+   
+  
+  </view>
+</view>

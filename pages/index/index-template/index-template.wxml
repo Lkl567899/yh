@@ -1,0 +1,28 @@
+<template name="index-popular-template">
+  <view class="popular-list" data-postid="{{id}}">
+    <view class="popular-list-img">
+      <image mode="widthFix" src="{{cover_url}}"></image>
+    </view>
+    <view class="popular-list-name">{{title}}</view>
+    <view class="popular-list-money">
+      <text>￥{{price}}</text>
+    </view>
+  </view>
+</template>
+
+<template name="index-hot-template">
+  <view class="goods-info" data-goodsid="{{id}}">
+    <view class="goods-image">
+      <image mode="widthFix" src="{{cover_url}}"></image>
+    </view>
+    <view class="goods-name">{{title}}</view>
+    <view class="goods-sale">
+      <view class="goods-price">
+        ￥{{price}}
+      </view>
+      <view class="goods-sales">
+        <text class="iconfont icon-gouwuche"></text>
+      </view>
+    </view>
+  </view>
+</template>

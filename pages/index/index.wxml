@@ -1,0 +1,66 @@
+<!--index.wxml-->
+<import src="index-template/index-template"></import>
+<view class="search">
+    <SearchInput></SearchInput>
+</view>
+<!-- 轮播图开始 -->
+<view class="index_swiper">
+    <swiper indicator-dots="{{true}}" autoplay="true" circular="{{true}}" interval="2000">
+        <swiper-item wx:for="{{ swiperList }}" wx:key="goods_id">
+            <navigator>
+                <image mode="widthFix" src="{{item.image_src}}" />
+            </navigator>
+        </swiper-item>
+    </swiper>
+</view>
+<!-- 分类 -->
+<view class="ma_ify_box">
+    <view class="index_cate">
+        <navigator wx:for="{{catesList}}" wx:key="name">
+            <image src="{{item.image_src}}" mode="widthFix" />
+        </navigator>
+        <navigator>
+            <image src="https://api-hmugo-web.itheima.net/pyg/icon_index_nav_4@2x.png" mode="widthFix" />
+        </navigator>
+
+    </view>
+</view>
+
+<view class="info">
+    <view>
+        <text>震惊</text>
+    </view>
+    <text class="iconfont icon-youjiantou"></text>
+</view>
+
+
+<view class="popular">
+    <view class="popular-box">
+        <view class="popular-title">
+            <text class="p_tex">今年爆款</text>
+            <view class="popular-more">
+                查看更多
+            </view>
+        </view>
+        <view class="popular-item_box">
+            <block wx:for="{{BaokList}}">
+                <template is="index-popular-template" data="{{...item}}"></template>
+            </block>
+        </view>
+    </view>
+</view>
+
+
+<view class="hot-box">
+    <view class="hot-title">商城热销</view>
+    <view class="hot-goods-box">
+        <block wx:for="{{hotData}}">
+            <template is="index-hot-template" data="{{...item}}"></template>
+        </block>
+    </view>
+</view>
+
+
+<view class="toTop" bindtap="toTop" wx:if="{{toTopIshide}}">
+  <text class="iconfont icon-shangjiantou"></text>
+</view>

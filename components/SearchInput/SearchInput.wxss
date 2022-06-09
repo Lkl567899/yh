@@ -1,0 +1,14 @@
+/* components/components.wxss */
+@import "../../styles/iconfont.wxss";
+.search{
+  height: 70rpx;
+  border-radius: 45rpx;
+  text-align: center;
+  color: #ccbbcc;
+  font-size: 32rpx;
+  background-color: #eee;
+  line-height: 70rpx;
+}
+.icon-sousuo_o{
+  font-size: 42rpx;
+}
